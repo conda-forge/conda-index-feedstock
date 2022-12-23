@@ -47,8 +47,6 @@ test:
     - pip check
     - pytest -k test_index_on_single_subdir_1
 
-
-
 about:
   home: https://github.com/conda/conda-index
   summary: Create `repodata.json` for collections of conda packages.
