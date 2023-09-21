@@ -1,5 +1,5 @@
 {% set name = "conda-index" %}
-{% set version = "0.2.3" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/conda/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: b3ca5248a714d355dff29b1c07f4f5b3088e9f660815b19bb40f0379664c744c
+  sha256: dc44fc779bdf34809c1c6b97131d983e71bc373590a12ef6226425d294141405
 
 build:
   number: 0
@@ -22,12 +22,12 @@ requirements:
   run:
     - python
     - click >=8
-    - conda >=4.12.0
+    - conda >=4.14.0
     - conda-package-streaming >=0.7.0
     - filelock
     - jinja2
     - more-itertools
-    - PyYAML >=6
+    - ruamel.yaml
 
 test:
   imports:
