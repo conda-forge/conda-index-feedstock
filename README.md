@@ -1,11 +1,11 @@
-About conda-index
-=================
+About conda-index-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/conda-index-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/conda/conda-index
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/conda-index-feedstock/blob/main/LICENSE.txt)
 
 Summary: Create `repodata.json` for collections of conda packages.
 
