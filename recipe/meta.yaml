@@ -11,7 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install --no-build-isolation . -vv
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
@@ -38,6 +38,7 @@ test:
     - pytest-cov
     - pytest-mock
     - tomli
+    - toolz
   commands:
     - pytest -k test_index_on_single_subdir_1
   imports:
