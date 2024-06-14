@@ -57,6 +57,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - kenodegard
     - AndresGuzman-Ballen
     - dholth
     - jharlow-intel
