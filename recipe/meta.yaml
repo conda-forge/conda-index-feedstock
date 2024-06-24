@@ -19,8 +19,6 @@ requirements:
     - flit-core
     - python
     - pip
-    - wheel
-    - setuptools
   run:
     - python
     - click >=8
