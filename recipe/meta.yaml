@@ -1,5 +1,5 @@
 {% set name = "conda-index" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,17 +7,16 @@ package:
 
 source:
   url: https://github.com/conda/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 0d83fd01af3c5b17860a86c1e217090a19b6e262114a242bc7f4ff212ed1e705
+  sha256: 12d78ec6dc55f64ad68761108a416ebde3dc6472f257045ddfa45378980c9074
 
 build:
   number: 0
-  skip: True  # [py<37]
-  script: {{ PYTHON }} -m pip install --no-build-isolation --no-deps . -vv
-  noarch: python
+  skip: True  # [py<38]
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
   host:
-    - flit-core
+    - flit-core >=3.2,<4
     - python
     - pip
   run:
@@ -29,6 +28,7 @@ requirements:
     - jinja2
     - more-itertools
     - ruamel.yaml
+    - zstandard
 
 test:
   imports:
@@ -44,6 +44,7 @@ test:
     - pytest-cov
     - pytest-mock
     - tomli
+    - fsspec
   commands:
     - pip check
     - pytest -k test_index_on_single_subdir_1
@@ -64,3 +65,4 @@ extra:
     - AndresGuzman-Ballen
     - dholth
     - jharlow-intel
+    - kenodegard
