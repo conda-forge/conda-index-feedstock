@@ -11,16 +11,16 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install --no-build-isolation . -vv
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
   host:
     - flit-core
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - click >=8
     - conda >=4.12.0
     - conda-package-streaming
@@ -40,6 +40,7 @@ test:
     - pytest-mock
     - tomli
     - toolz
+    - python {{ python_min }}
   commands:
     - pytest -k test_index_on_single_subdir_1
   imports:
