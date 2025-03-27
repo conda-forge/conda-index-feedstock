@@ -150,4 +150,5 @@ Feedstock Maintainers
 * [@AndresGuzman-Ballen](https://github.com/AndresGuzman-Ballen/)
 * [@dholth](https://github.com/dholth/)
 * [@jharlow-intel](https://github.com/jharlow-intel/)
+* [@kenodegard](https://github.com/kenodegard/)
 
