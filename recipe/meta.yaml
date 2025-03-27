@@ -1,5 +1,5 @@
 {% set name = "conda-index" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/conda/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 12d78ec6dc55f64ad68761108a416ebde3dc6472f257045ddfa45378980c9074
+  sha256: b096e34b048b494489ff41389ecc4b17b9f400dbf5b36ee2e39aa2558cc9a6c2
 
 build:
   script: {{ PYTHON }} -m pip install --no-build-isolation . -vv
