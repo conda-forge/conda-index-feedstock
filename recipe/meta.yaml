@@ -50,7 +50,8 @@ test:
     - aiohttp !=4.0.0a0, !=4.0.0a1
   commands:
     - pip check
-    - pytest -k test_index_on_single_subdir_1
+    # ModuleNotFoundError: No module named 'conda_build' for py313.
+    - pytest -k test_index_on_single_subdir_1  # [py<313]
 
 about:
   home: https://github.com/conda/conda-index
