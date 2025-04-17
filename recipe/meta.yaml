@@ -1,5 +1,5 @@
 {% set name = "conda-index" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/conda/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 12d78ec6dc55f64ad68761108a416ebde3dc6472f257045ddfa45378980c9074
+  sha256: b096e34b048b494489ff41389ecc4b17b9f400dbf5b36ee2e39aa2558cc9a6c2
 
 build:
   number: 0
-  skip: True  # [py<38]
+  skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
@@ -26,7 +26,7 @@ requirements:
     - conda-package-streaming >=0.7.0
     - filelock
     - jinja2
-    - more-itertools
+    - msgpack-python
     - ruamel.yaml
     - zstandard
 
@@ -44,7 +44,9 @@ test:
     - pytest-cov
     - pytest-mock
     - tomli
+    # "fsspec[http]" expands to 'http = ["aiohttp !=4.0.0a0, !=4.0.0a1"]''
     - fsspec
+    - aiohttp !=4.0.0a0, !=4.0.0a1
   commands:
     - pip check
     - pytest -k test_index_on_single_subdir_1
