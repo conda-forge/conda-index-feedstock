@@ -1,5 +1,5 @@
 {% set name = "conda-index" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,28 +7,31 @@ package:
 
 source:
   url: https://github.com/conda/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: b096e34b048b494489ff41389ecc4b17b9f400dbf5b36ee2e39aa2558cc9a6c2
+  sha256: 93034029c5d3b13ba4837d0b7813206c2faedf0a46bf25952d4d8a3882e31206
 
 build:
+  script_env:
+    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script: {{ PYTHON }} -m pip install --no-build-isolation . -vv
   number: 0
   noarch: python
 
 requirements:
   host:
-    - flit-core
+    - hatchling >=1.12.2
+    - hatch-vcs >=0.2.0
     - python {{ python_min }}
     - pip
   run:
     - python >={{ python_min }}
     - click >=8
     - conda >=4.14.0
-    - conda-package-streaming
+    - conda-package-streaming >=0.7.0
     - filelock
     - jinja2
-    - more-itertools
     - msgpack-python >=1.0.2
     - ruamel.yaml
+    - zstandard
 
 test:
   requires:
