@@ -25,7 +25,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - click >=8
-    - conda >=4.14.0
+    - conda >=25
     - conda-package-streaming >=0.7.0
     - filelock
     - jinja2
