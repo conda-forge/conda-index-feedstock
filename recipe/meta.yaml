@@ -1,5 +1,5 @@
 {% set name = "conda-index" %}
-{% set version = "0.11.0" %}
+{% set version = "0.12.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/conda/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 2c3c223dea4dd4aa921e5f8f9fe72326cb7baaa561dbf1f0d842e4d6a2db3226
+  sha256: 08586a4d67d0faea679721b434a1e2df5a26ed58b6b0d7e62d19e5ada803e380
 
 build:
   script_env:
@@ -24,7 +24,6 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - click >=8
     - conda >=25
     - conda-package-streaming >=0.12.0
     - filelock
@@ -35,14 +34,13 @@ requirements:
 
 test:
   requires:
-    - conda-build >=24
+    - conda-build >=25
     - conda-package-handling >=2.2.0
     - coverage
     - fsspec
     - pytest >=7
     - pytest-cov
     - pytest-mock
-    - tomli
     - python {{ python_min }}
   commands:
     - pytest -k test_index_on_single_subdir_1
