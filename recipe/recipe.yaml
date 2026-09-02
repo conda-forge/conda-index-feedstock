@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: conda-index
-  version: "0.12.1"
+  version: "0.13.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/conda/${{ name }}/archive/refs/tags/${{ version }}.tar.gz
-  sha256: 08586a4d67d0faea679721b434a1e2df5a26ed58b6b0d7e62d19e5ada803e380
+  sha256: ac9207651788bd5ca557f24328701d4ec71712dea0e758c73fc7100b5cd9dc55
 
 build:
   number: 0
