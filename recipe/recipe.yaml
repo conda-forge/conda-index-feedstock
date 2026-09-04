@@ -28,12 +28,12 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
+    - backports.zstd >=1.3.0
     - conda >=25
     - conda-package-streaming >=0.12.0
     - jinja2
     - msgpack-python >=1.1.1
     - ruamel.yaml
-    - zstandard
 
 tests:
   - python:
